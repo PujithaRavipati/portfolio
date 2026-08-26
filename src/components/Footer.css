@@ -1,0 +1,47 @@
+.footer {
+  text-align: center;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: auto; /* for sticky footer behavior if needed */
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-title {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 50%;
+  color: var(--text-primary);
+  background-color: var(--bg-surface);
+  transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+}
+
+.footer-copyright {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}

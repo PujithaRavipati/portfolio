@@ -1,0 +1,22 @@
+/* src/styles/variables.css */
+:root {
+  /* Colors */
+  --bg-base: #0A0E1A;
+  --bg-surface: #131A2B;
+  --text-primary: #F5F5F0;
+  --text-muted: #A9AFC0;
+  --accent-green: #9DC237;
+
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+
+  /* Typography */
+  --font-serif: 'Playfair Display', 'Lora', serif;
+  --font-sans: 'Inter', 'Work Sans', sans-serif;
+
+  /* Layout */
+  --max-width: 1200px;
+  --pad-page-mobile: 24px;
+  --pad-page-desktop: 80px;
+  --gap-section: 120px;
+}

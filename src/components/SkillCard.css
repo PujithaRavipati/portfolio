@@ -1,0 +1,31 @@
+.skill-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 40px;
+  transition: border-color 0.3s ease;
+  height: 100%;
+}
+
+.skill-card:hover {
+  border-color: rgba(157, 194, 55, 0.3); /* subtle accent green border */
+}
+
+.skill-icon-wrapper {
+  color: var(--accent-green);
+  margin-bottom: 2rem;
+}
+
+.skill-title {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.skill-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
