@@ -1,32 +1,33 @@
 /* src/styles/variables.css */
 :root {
-  /* Room walls. Each wall pairs with the text colour that passes contrast on it. */
-  --wall-lobby: #2747B8;   /* cobalt */
-  --wall-works: #1E6B52;   /* viridian */
-  --wall-archive: #E8A317; /* marigold */
-  --wall-desk: #B23A5F;    /* rose */
+  color-scheme: dark;
 
-  --paper: #FFFFFF;        /* label cards, frames */
-  --ink: #141414;          /* text on labels and on light walls */
-  --ink-soft: #4A4A4A;     /* secondary text on labels */
+  /* The wall */
+  --ground: #16141A;
+  --raised: #221F28;
+  --hair: #3A3642;
+  --text: #EDEAE4;
+  --muted: #B9B4AC;
 
-  /* Current room, swapped by [data-room] on <html> */
-  --wall: var(--wall-lobby);
-  --on-wall: var(--paper);
+  /* One line per page */
+  --line-home: #FF7A59;     /* coral */
+  --line-projects: #5FD6A8; /* mint */
+  --line-about: #F2B544;    /* amber */
+  --line-contact: #B9A2FF;  /* lilac */
+
+  /* Current page, swapped by [data-room] on <html> */
+  --line: var(--line-home);
 
   /* Typography */
-  --font-sans: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
-  --font-code: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  --font-sans: 'Overpass', 'Helvetica Neue', Arial, sans-serif;
+  --font-code: 'Overpass Mono', ui-monospace, Consolas, monospace;
 
   /* Layout */
-  --max-width: 1320px;
+  --max-width: 1440px;
   --gutter: clamp(16px, 5vw, 80px);
-  --rail: 2px;
-  --header-h: 88px;
-  --frame: clamp(8px, 1vw, 14px);
-  --hang: 0 28px 36px -22px rgba(0, 0, 0, 0.45);
+  --stroke: 6px;
 }
 
-:root[data-room="works"] { --wall: var(--wall-works); }
-:root[data-room="archive"] { --wall: var(--wall-archive); --on-wall: var(--ink); }
-:root[data-room="desk"] { --wall: var(--wall-desk); }
+:root[data-room="projects"] { --line: var(--line-projects); }
+:root[data-room="about"] { --line: var(--line-about); }
+:root[data-room="contact"] { --line: var(--line-contact); }

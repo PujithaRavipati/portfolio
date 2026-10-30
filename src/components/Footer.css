@@ -1,37 +1,42 @@
-/* The skirting: a second rail closes every room */
-.footer {
-  margin-top: auto;
-  border-top: var(--rail) solid var(--on-wall);
-  padding: clamp(40px, 6vw, 72px) 0 32px;
-}
+.footer { margin-top: auto; padding-bottom: 28px; }
+
+/* All four lines run together across the bottom of every page */
+.footer-lines { display: grid; gap: 4px; margin-bottom: clamp(40px, 6vw, 72px); }
+.footer-lines i { display: block; height: 4px; }
+.footer-lines i:nth-child(1) { background: var(--line-home); }
+.footer-lines i:nth-child(2) { background: var(--line-projects); }
+.footer-lines i:nth-child(3) { background: var(--line-about); }
+.footer-lines i:nth-child(4) { background: var(--line-contact); }
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 32px 48px;
   align-items: end;
 }
 
 .footer-title {
   font-size: clamp(1.75rem, 4vw, 3rem);
-  font-weight: 750;
-  font-stretch: 108%;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  max-width: 16ch;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+  max-width: 18ch;
 }
 
-.footer-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-links { display: grid; gap: 10px; }
 .footer-links a {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 .footer-links a:hover { text-decoration: underline; }
 
-.footer-copyright { grid-column: 1 / -1; font-size: 0.875rem; opacity: 0.8; }
+.footer-note { grid-column: 1 / -1; font-size: 0.875rem; color: var(--muted); }
+.footer-keys { display: none; }
+@media (hover: hover) { .footer-keys { display: inline; } }
 
 @media (max-width: 720px) {
   .footer-inner { grid-template-columns: minmax(0, 1fr); }

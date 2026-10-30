@@ -1,89 +1,35 @@
-.lobby {
+.hero { position: relative; padding-top: clamp(24px, 4vh, 48px); }
+
+/* Desktop: the name sits in the map's open top-left corner */
+.hero-head { position: absolute; left: 0; top: clamp(24px, 4vh, 48px); z-index: 1; width: 42%; }
+.hero-name {
+  color: var(--line);
+  font-size: clamp(3.25rem, 8.2vw, 7.5rem);
+  letter-spacing: -0.03em;
+  line-height: 0.92;
+}
+.hero-role {
+  font-size: clamp(1.1rem, 1.9vw, 1.6rem);
+  line-height: 1.28;
+  margin-top: clamp(12px, 1.6vw, 22px);
+  max-width: 26ch;
+}
+
+.latest {
   display: grid;
   grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-  gap: clamp(32px, 5vw, 72px);
-  align-items: start;
-  padding-top: clamp(48px, 8vh, 96px);
-  padding-bottom: clamp(56px, 9vh, 112px);
-}
-
-.lobby-wall { padding-top: 24px; }
-.lobby-wall .vinyl {
-  font-size: clamp(3.4rem, 9.6vw, 9rem);
-  font-stretch: 118%;
-  line-height: 0.88;
-}
-.lobby-wall .wall-text { margin-top: 28px; }
-
-.lobby-open {
-  margin-top: 20px;
-  font-weight: 500;
-}
-
-.lobby-actions {
-  display: flex;
-  flex-wrap: wrap;
+  gap: clamp(24px, 4vw, 64px);
   align-items: center;
-  gap: 16px 28px;
-  margin-top: 36px;
+  padding: clamp(56px, 8vw, 112px) 0;
 }
-
-.btn-paper {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--paper);
-  color: var(--ink);
-  padding: 14px 22px;
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow: 0 10px 18px -14px rgba(0, 0, 0, 0.4);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.btn-paper:hover { transform: translateY(-2px); }
-
-.lobby-mail { font-weight: 500; }
-
-/* The work hangs from the rail itself: its wire starts at the top of the room */
-.lobby-work { margin-top: calc(-1 * clamp(48px, 8vh, 96px)); }
-.lobby-work .work-hang { padding-top: clamp(64px, 10vh, 120px); }
-.lobby-work .work-wire { height: clamp(64px, 10vh, 120px); }
-
-/* Directory sign: room names lettered on the wall between two rails */
-.floor-plan { padding-bottom: clamp(64px, 10vw, 128px); }
-.floor-plan-list { border-top: var(--rail) solid var(--on-wall); }
-.floor-plan-list li { border-bottom: 1px solid var(--on-wall); }
-.floor-plan-list a {
-  display: grid;
-  grid-template-columns: 3ch minmax(0, 1.1fr) minmax(0, 1fr) auto;
-  align-items: baseline;
-  gap: 16px 24px;
-  padding: 18px 0;
-  text-decoration: none;
-}
-.floor-plan-list a:hover .floor-arrow { transform: translateX(6px); }
-.floor-plan-list a:hover .floor-name { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.12em; }
-.floor-key { font-variant-numeric: tabular-nums; opacity: 0.85; }
-.floor-name {
-  font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: 750;
-  font-stretch: 112%;
-  letter-spacing: -0.03em;
-  line-height: 1;
-}
-.floor-line { font-size: 1.05rem; }
-.floor-arrow { align-self: center; transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+.latest-shot { display: block; border: 1px solid var(--hair); transition: border-color 0.2s; }
+.latest-shot:hover { border-color: var(--line-projects); }
+.latest-shot img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+.latest-text h2 { color: var(--line-projects); font-size: clamp(2rem, 4vw, 3.25rem); letter-spacing: -0.025em; }
+.latest-text > * + * { margin-top: 0.7em; }
+.latest-text p { max-width: 42ch; }
 
 @media (max-width: 900px) {
-  .lobby { grid-template-columns: minmax(0, 1fr); }
-  .lobby-work { margin-top: 0; }
-  .lobby-work .work-hang { padding-top: 40px; }
-  .lobby-work .work-wire { height: 40px; }
-}
-
-@media (max-width: 640px) {
-  .floor-key { display: none; }
-  .floor-plan-list a { grid-template-columns: minmax(0, 1fr) auto; row-gap: 6px; }
-  .floor-line { grid-column: 1; grid-row: 2; }
-  .floor-arrow { grid-column: 2; grid-row: 1 / 3; }
+  .hero-head { position: static; width: auto; padding-bottom: 32px; }
+  .latest { grid-template-columns: minmax(0, 1fr); }
 }

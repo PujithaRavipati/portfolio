@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="en" data-room="lobby">
+<html lang="en" data-room="home">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Ravipati Pujitha, frontend developer. React apps, built and shipped live." />
-    <meta name="theme-color" content="#2747B8" />
-    <link rel="preload" href="/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <meta name="theme-color" content="#16141A" />
+    <link rel="preload" href="/fonts/overpass-latin-var.woff2" as="font" type="font/woff2" crossorigin>
     <title>Ravipati Pujitha · Frontend Developer</title>
     <script>
-      // Paint the right wall before first render so a direct visit doesn't fade in from the lobby
-      { const room = { '/projects': 'works', '/about': 'archive', '/contact': 'desk' }[location.pathname.replace(/\/+$/, '')]; if (room) document.documentElement.dataset.room = room; }
+      // Set the page's line colour before first render so a direct visit doesn't flash coral
+      { const room = { '/projects': 'projects', '/about': 'about', '/contact': 'contact' }[location.pathname.replace(/\/+$/, '')]; if (room) document.documentElement.dataset.room = room; }
     </script>
   </head>
   <body>

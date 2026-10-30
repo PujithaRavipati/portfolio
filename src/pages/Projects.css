@@ -1,62 +1,36 @@
-.room-head {
-  padding: clamp(48px, 8vh, 96px) 0 clamp(40px, 6vh, 72px);
-}
-.room-head .wall-text { margin-top: 20px; }
+.page-projects { padding-bottom: clamp(40px, 6vw, 72px); }
 
-.page-projects { padding-bottom: clamp(64px, 10vw, 128px); }
-
-/* One dominant work per wall */
-.works-feature {
+.project { scroll-margin-top: 24px; }
+.project h2 { color: var(--line); font-size: clamp(2rem, 4.6vw, 3.75rem); letter-spacing: -0.025em; }
+.project-grid {
   display: grid;
-  grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
-  gap: clamp(24px, 4vw, 56px);
-  align-items: end;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: start;
 }
-.feature-work { grid-row: span 2; }
-.feature-work .work-label { max-width: 560px; }
+.project-grid > div > * + *, .project--small > * + * { margin-top: 0.65em; }
+.project p { max-width: 58ch; }
 
-.stages h3 { font-size: 1.15rem; }
-.stages dl { margin-top: 18px; }
-.stage { padding: 14px 0; border-top: 1px solid #E2E2E2; }
-.stage dt { font-weight: 700; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; }
-.stage dt .meta { font-weight: 400; font-size: 0.875rem; }
-.stage dd { font-size: 0.94rem; margin-top: 4px; }
+.project-shot { display: block; border: 1px solid var(--hair); transition: border-color 0.2s; }
+.project-shot:hover { border-color: var(--line); }
+.project-shot img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
 
-.works-second {
-  margin-top: clamp(80px, 12vw, 160px);
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 5fr) minmax(0, 5fr);
-}
-.second-work {
-  grid-column: 2 / 4;
-  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
-  align-items: end;
-  gap: clamp(20px, 3vw, 40px);
-}
+.branch { margin-top: clamp(32px, 4vw, 56px); max-width: 720px; }
+.branch h3, .app-routes h3 { font-size: 1.3rem; letter-spacing: -0.01em; }
+.branch > .route { margin-top: 20px; }
+.branch > .meta { margin-top: 6px; }
+.branch-name { font-weight: 800; }
+.branch-name .meta { font-weight: 400; margin-left: 8px; }
 
-/* A study stands in where there is no live app to hang */
-.study { color: var(--ink); padding: clamp(16px, 2.4vw, 32px); }
-.study-title { font-weight: 700; margin-bottom: 14px; }
-.study li {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-  gap: 12px;
-  padding: 9px 0;
-  border-top: 1px solid #E2E2E2;
-  font-size: 0.94rem;
-}
-.study code { font-family: var(--font-code); font-size: 0.875rem; }
+.app-routes { background: var(--raised); padding: clamp(20px, 2.4vw, 32px); }
+.app-routes .route { margin-top: 18px; }
+.app-routes .stop { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 12px; }
 
-.works-small {
-  margin-top: clamp(80px, 12vw, 160px);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 380px));
-  gap: clamp(20px, 3vw, 40px);
-}
+.project--small h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); }
 
 @media (max-width: 960px) {
-  .works-feature { grid-template-columns: minmax(0, 1fr); }
-  .feature-work { grid-row: auto; }
-  .works-second { grid-template-columns: minmax(0, 1fr); }
-  .second-work { grid-column: 1; grid-template-columns: minmax(0, 1fr); }
+  .project-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .app-routes .stop { grid-template-columns: minmax(0, 1fr); gap: 0; }
 }

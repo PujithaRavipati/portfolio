@@ -1,26 +1,28 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import { rooms } from './rooms';
+import { roomFor } from './rooms';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
-// Scroll to top and repaint the wall on route change
+// Scroll to the target and switch to the page's line colour on route change
 const RoomEffects = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    const path = pathname.replace(/\/+$/, '') || '/';
-    const room = rooms.find(r => r.path === path) ?? rooms[0];
+    const target = hash && document.getElementById(hash.slice(1));
+    if (target) target.scrollIntoView();
+    else window.scrollTo({ top: 0, behavior: 'instant' });
+
+    const room = roomFor(pathname);
     document.documentElement.dataset.room = room.id;
-    document.title = room.id === 'lobby'
+    document.title = room.id === 'home'
       ? 'Ravipati Pujitha · Frontend Developer'
       : `${room.name} · Ravipati Pujitha`;
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return null;
 };

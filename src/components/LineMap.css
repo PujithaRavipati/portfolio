@@ -1,0 +1,80 @@
+.line-map { position: relative; aspect-ratio: 1280 / 740; }
+
+.map-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.map-svg--tall { display: none; }
+
+.map-lines path {
+  fill: none;
+  stroke-width: 12;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  animation: line-out 1.3s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+.map-lines path:nth-child(2) { animation-delay: 0.08s; }
+.map-lines path:nth-child(3) { animation-delay: 0.16s; }
+.map-lines path:nth-child(4) { animation-delay: 0.24s; }
+
+/* The lines draw out from the capsule once, on arrival */
+@keyframes line-out {
+  from { stroke-dashoffset: 1; }
+}
+
+.map-capsule, .map-dot { fill: var(--ground); stroke: var(--text); }
+.map-capsule { stroke-width: 7; }
+.map-dot { stroke-width: 6; }
+
+/* Labels sit on top of the line, starting at the station */
+.station {
+  position: absolute;
+  left: calc(var(--x) / 1280 * 100% - 13px);
+  top: calc(var(--y) / 740 * 100% - 24px);
+  transform: translateY(-100%);
+  width: min(26%, 300px);
+}
+.station-body { display: grid; gap: 1px; text-decoration: none; }
+.station-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--c);
+}
+.station-name svg { transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+a.station-body:hover .station-name { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.18em; }
+a.station-body:hover .station-name svg { transform: translateX(4px); }
+.station-detail { font-size: 0.95rem; color: var(--muted); overflow-wrap: anywhere; line-height: 1.3; }
+
+@media (max-width: 900px) {
+  .line-map { aspect-ratio: auto; height: 560px; }
+  .map-svg--wide { display: none; }
+  .map-svg--tall { display: block; width: 64px; height: 560px; }
+  .map-capsule { stroke-width: 4; }
+  .map-dot { stroke-width: 4; }
+  .map-lines path { stroke-width: 6; }
+
+  /* Rows are 102px, so each label lines up with its line's end */
+  .stations {
+    position: absolute;
+    inset: 44px 0 0 84px;
+    display: grid;
+    grid-auto-rows: 102px;
+  }
+  .station {
+    position: static;
+    transform: none;
+    width: auto;
+    --c: inherit;
+  }
+  .station:nth-child(1) .station-name { color: var(--line-home); }
+  .station:nth-child(2) .station-name, .station:nth-child(3) .station-name { color: var(--line-projects); }
+  .station:nth-child(4) .station-name { color: var(--line-about); }
+  .station:nth-child(5) .station-name { color: var(--line-contact); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map-lines path { animation: none; }
+}

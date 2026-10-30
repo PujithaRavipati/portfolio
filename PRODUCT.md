@@ -41,6 +41,7 @@ Open decision: the Home hero currently says "AI Developer", which conflicts with
 - Name: Ravipati Pujitha (the site also uses "Pujitha Ravipati" in the `<title>`).
 - LinkedIn: https://www.linkedin.com/in/pujitha-ravipati/ · GitHub: https://github.com/PujithaRavipati
 - Voice in existing copy: warm, first-person, informal ("let's talk", "Currently obsessed with").
+- Dark only, no light/dark toggle (her decision, 2026-10-30). Palette she chose: charcoal #16141A everywhere, with one colour per page: Home coral #FF7A59, Projects mint #5FD6A8, About amber #F2B544, Contact lilac #B9A2FF. This replaces her earlier "no dark look" preference; glowing edges and navy-with-blobs stay ruled out.
 
 ## Evidence on Hand
 

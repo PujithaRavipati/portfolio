@@ -7,20 +7,20 @@ related_targets: ["src/pages/Home.jsx","src/pages/Projects.jsx","src/pages/About
 
 # Portfolio site (all 4 routes)
 
-Mode: Experience. Audience: frontend recruiters skimming on desktop and mobile. Takeaways, equal weight: she ships real apps, she has design taste, she is easy to reach. Anti-goals: dark techy, gimmicky motion, corporate/stiff, a hero photo. Build path: code-led (no image generation).
+Mode: Experience. Audience: frontend recruiters skimming on desktop and mobile. Takeaways, equal weight: she ships real apps, she has design taste, she is easy to reach. Anti-goals: gimmicky motion, corporate/stiff, a hero photo, glowing edges or navy-and-blobs dark. User-pinned: dark only, ground #16141A, raised #221F28, text #EDEAE4, one colour per page (Home coral #FF7A59, Projects mint #5FD6A8, About amber #F2B544, Contact lilac #B9A2FF). Build path: code-led (no image generation).
 
 Unresolved: Formspree form ID (form falls back to a composed mailto until `VITE_FORMSPREE_ID` is set). Task Scheduler has no live deployment.
 
 ## Direction contract
 
-THESIS: Each route is a gallery room and each shipped app hangs as one work with a real tombstone label. Refuses the category default of a dark hero over a row of equal project cards.
+THESIS: The portfolio is a metro line map on a station wall at night: each page is a coloured line, each real project or milestone is a station you can travel to. Refuses the dark developer default of a hero over a row of equal cards, and refuses glow.
 
-OWN-WORLD: Flat, full-strength painted walls, one per room: cobalt Lobby, viridian Works, marigold Archive, rose Desk. A single 2px picture rail runs across the top; the nav sits on it, and works hang from it on wires. White label cards with black grotesk text. Wall vinyl lettering at room scale in Archivo. Text never takes the wall colour.
+OWN-WORLD: Flat charcoal wall, thick flat route lines with true 45-degree bends in coral, mint, amber and lilac, white-ringed station dots, one interchange capsule. Headings and the rail take the current page's colour; body text stays warm white. Overpass signage sans throughout; Overpass Mono only for real routes and URLs.
 
-STORY: The visitor reads "Ravipati Pujitha, frontend developer", sees VerifyOnChain hung as a real live app, walks the rooms with clicks or keys 1–4, and leaves through the Desk with a working email, form, LinkedIn or GitHub.
+STORY: The visitor reads "Ravipati Pujitha, frontend developer", sees four lines leave the name for real destinations, follows one to VerifyOnChain or Task Scheduler, and reaches Contact with a working email, form, LinkedIn or GitHub.
 
-FIRST VIEWPORT: Lobby, cobalt wall. Rail at the top with four room links and the active one marked by the line. Name in wall vinyl, left, about 60% of the width, with a one-line role under it. VerifyOnChain screenshot framed in white, hung right on a wire from the rail, label card beneath it with the live link.
+FIRST VIEWPORT: Name huge at top left, role under it. Four parallel lines leave one capsule at left centre, fan out at 45 degrees and cross the page. Right side, on the lines, labelled link stations: Open to work (coral, status only), VerifyOnChain and Task Scheduler (mint), VIT-AP University (amber), Contact (lilac). Stations are the primary action. Signature interaction: lines draw out once from the capsule on arrival; a ring slides along the header rail to the current page. Keys 1-4 switch pages.
 
-FORM: The Exhibition, position 4 of 7 on the ordered list. seed:d16108c7895e99d0
+FORM: The Line Map, position 1 of 7 on the ordered list. seed:5abb85e1ae8b6f54
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
