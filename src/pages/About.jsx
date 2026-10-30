@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
 
-// Newest first, like the rest of the site
+// Newest first, like the rest of the sit
 const timeline = [
   { title: 'Open to opportunities', place: 'Actively seeking full-time and freelance roles', date: 'present', text: 'Building real-world projects and expanding my skill set alongside my degree while looking for the right place to start my professional journey.' },
   { title: 'B.Tech in Computer Science & Engineering', place: 'VIT-AP University', date: '2023 – present', text: 'Four-year undergraduate program focused on core CS fundamentals, software development, and emerging technologies.' },
