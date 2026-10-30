@@ -3,9 +3,10 @@ import './About.css';
 
 // Newest first, like the rest of the site
 const timeline = [
-  { title: 'Fresher, open to opportunities', place: 'Actively seeking full-time and freelance roles', date: '2025 – present', text: 'Building real-world projects and expanding my skill set while looking for the right place to start my professional journey.' },
-  { title: 'B.Tech in Computer Science & Engineering', place: 'VIT-AP University', date: '2021 – 2025', text: 'Four-year undergraduate program focused on core CS fundamentals, software development, and emerging technologies.' },
-  { title: 'Intermediate (MPC)', place: 'SR Junior College', date: '2019 – 2021', text: 'Higher secondary education with a focus on Mathematics, Physics, and Chemistry.' }
+  { title: 'Open to opportunities', place: 'Actively seeking full-time and freelance roles', date: 'present', text: 'Building real-world projects and expanding my skill set alongside my degree while looking for the right place to start my professional journey.' },
+  { title: 'B.Tech in Computer Science & Engineering', place: 'VIT-AP University', date: '2023 – present', text: 'Four-year undergraduate program focused on core CS fundamentals, software development, and emerging technologies.' },
+  { title: 'Intermediate (MPC)', place: 'SR Junior College', date: '2021 – 2023', text: 'Higher secondary education with a focus on Mathematics, Physics, and Chemistry.' },
+  { title: 'Class X', place: 'KCP Siddhartha Adarsh Residential Public School', date: '2021', text: 'Completed secondary school.' }
 ];
 
 const skills = [
@@ -28,7 +29,7 @@ const About = () => {
       <header className="page-head">
         <h1 className="page-title">About me</h1>
         <p className="page-intro">
-          Hi, I'm Pujitha. I finished my B.Tech in Computer Science at VIT-AP in 2025, and I build React apps.
+          Hi, I'm Pujitha. I'm a B.Tech Computer Science student at VIT-AP, and I build React apps.
         </p>
         <p className="about-open">Currently open to full-time opportunities and freelance work. Let's talk.</p>
       </header>

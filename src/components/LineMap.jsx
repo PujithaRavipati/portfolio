@@ -9,7 +9,7 @@ const stations = [
   { line: 'home', x: 950, y: 110, name: 'Open to work', detail: 'Full-time frontend roles and freelance' },
   { line: 'projects', x: 850, y: 270, name: 'VerifyOnChain', detail: 'Live on Vercel', to: '/projects#verifyonchain' },
   { line: 'projects', x: 1090, y: 270, name: 'Task Scheduler', detail: 'React, Express, MongoDB', to: '/projects#task-scheduler' },
-  { line: 'about', x: 950, y: 520, name: 'VIT-AP University', detail: 'B.Tech CSE, 2025', to: '/about' },
+  { line: 'about', x: 950, y: 520, name: 'VIT-AP University', detail: 'B.Tech CSE, 2023 – present', to: '/about' },
   { line: 'contact', x: 950, y: 680, name: 'Contact', detail: EMAIL, to: '/contact' }
 ];
 

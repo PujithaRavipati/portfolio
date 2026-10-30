@@ -14,7 +14,7 @@ Secondary (confirmed only as existing site copy): freelance clients. The About p
 
 ## Product Purpose
 
-A personal portfolio for Ravipati Pujitha: a 2025 B.Tech CSE graduate from VIT-AP University who is a fresher seeking a first full-time frontend role. Success: a recruiter leaves with a clear "frontend developer" read, sees shipped projects, and either sends a message or opens LinkedIn or GitHub.
+A personal portfolio for Ravipati Pujitha: a B.Tech CSE student at VIT-AP University (2023–present) who is a fresher seeking a first full-time frontend role. Success: a recruiter leaves with a clear "frontend developer" read, sees shipped projects, and either sends a message or opens LinkedIn or GitHub.
 
 ## Positioning
 
@@ -51,7 +51,7 @@ Real projects from GitHub:
 - **Task Scheduler** (she called it "just a normal one"; the description comes from its code): a task manager with accounts. Users register and log in (JWT + bcrypt), create and edit tasks with due dates, and track them on a dashboard. Stack: React 18 (CRA), React Router, axios, react-datepicker; Express + MongoDB/Mongoose. Repos: `task-schedular-frontend`, `task-scheduler-backend`, earlier `Task_Scheduler`. No live link.
 - `MERNDAY-*` (about 35 repos) and `WT_01`: course/exercise repos. These are not portfolio pieces.
 
-Also on hand: education (VIT-AP B.Tech CSE 2021–2025; SR Junior College MPC 2019–2021) and interests, all in `src/pages/About.jsx`.
+Also on hand: education (VIT-AP B.Tech CSE 2023–present; SR Junior College MPC 2021–2023; KCP Siddhartha Adarsh Residential Public School Class X 2021) and interests, all in `src/pages/About.jsx`.
 
 Absent, and future work must not fabricate them: testimonials, employers, internships, metrics, awards, project descriptions beyond what she confirms. The About page "Achievements" are general claims; keep them as written and do not add to them.
 
