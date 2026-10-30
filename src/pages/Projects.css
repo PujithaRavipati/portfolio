@@ -1,21 +1,62 @@
-.page-projects {
-  min-height: calc(100vh - 80px);
+.room-head {
+  padding: clamp(48px, 8vh, 96px) 0 clamp(40px, 6vh, 72px);
 }
+.room-head .wall-text { margin-top: 20px; }
 
-.projects-grid {
+.page-projects { padding-bottom: clamp(64px, 10vw, 128px); }
+
+/* One dominant work per wall */
+.works-feature {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: end;
+}
+.feature-work { grid-row: span 2; }
+.feature-work .work-label { max-width: 560px; }
+
+.stages h3 { font-size: 1.15rem; }
+.stages dl { margin-top: 18px; }
+.stage { padding: 14px 0; border-top: 1px solid #E2E2E2; }
+.stage dt { font-weight: 700; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; }
+.stage dt .meta { font-weight: 400; font-size: 0.875rem; }
+.stage dd { font-size: 0.94rem; margin-top: 4px; }
+
+.works-second {
+  margin-top: clamp(80px, 12vw, 160px);
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 5fr) minmax(0, 5fr);
+}
+.second-work {
+  grid-column: 2 / 4;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  align-items: end;
+  gap: clamp(20px, 3vw, 40px);
 }
 
-@media (min-width: 768px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* A study stands in where there is no live app to hang */
+.study { color: var(--ink); padding: clamp(16px, 2.4vw, 32px); }
+.study-title { font-weight: 700; margin-bottom: 14px; }
+.study li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 12px;
+  padding: 9px 0;
+  border-top: 1px solid #E2E2E2;
+  font-size: 0.94rem;
+}
+.study code { font-family: var(--font-code); font-size: 0.875rem; }
+
+.works-small {
+  margin-top: clamp(80px, 12vw, 160px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 380px));
+  gap: clamp(20px, 3vw, 40px);
 }
 
-@media (min-width: 1024px) {
-  .projects-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+@media (max-width: 960px) {
+  .works-feature { grid-template-columns: minmax(0, 1fr); }
+  .feature-work { grid-row: auto; }
+  .works-second { grid-template-columns: minmax(0, 1fr); }
+  .second-work { grid-column: 1; grid-template-columns: minmax(0, 1fr); }
 }

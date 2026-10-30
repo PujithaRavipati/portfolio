@@ -1,103 +1,126 @@
 /* src/styles/global.css */
 @import './variables.css';
 
+/* Archivo variable (OFL), self-hosted latin subset */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 800;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url('/fonts/archivo-latin-var.woff2') format('woff2');
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  background-color: var(--wall);
+  color: var(--on-wall);
+  transition: background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), color 0.5s;
+  scrollbar-color: var(--on-wall) var(--wall);
+}
+
 body {
-  background-color: var(--bg-base);
-  color: var(--text-primary);
   font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
+::selection { background: var(--ink); color: var(--paper); }
+:root[data-room="archive"] ::selection { background: var(--paper); color: var(--ink); }
 
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
+h1, h2, h3 { font-weight: 700; line-height: 1.1; text-wrap: balance; }
 
-button {
-  font-family: inherit;
-  cursor: pointer;
-  background: none;
-  border: none;
-}
+a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
 
-ul {
-  list-style: none;
+:focus-visible {
+  outline: 2px solid var(--on-wall);
+  outline-offset: 3px;
 }
+.label :focus-visible, .frame:focus-visible { outline-color: var(--ink); }
 
-/* Layout Utilities */
+button { font: inherit; cursor: pointer; background: none; border: none; color: inherit; }
+ul { list-style: none; }
+img { display: block; max-width: 100%; }
+
 .container {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--pad-page-mobile);
-}
-@media (min-width: 1024px) {
-  .container {
-    padding: 0 var(--pad-page-desktop);
-  }
+  padding: 0 var(--gutter);
 }
 
-.section {
-  padding-top: var(--gap-section);
-  padding-bottom: var(--gap-section);
-  position: relative;
-  z-index: 1;
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
 
-/* Typography Utilities */
-.text-accent {
-  color: var(--accent-green);
+/* Wall vinyl: room-scale lettering applied straight to the wall */
+.vinyl {
+  font-size: clamp(3rem, 8.4vw, 6rem);
+  font-weight: 750;
+  font-stretch: 108%;
+  letter-spacing: -0.035em;
+  line-height: 0.92;
 }
-.text-muted {
-  color: var(--text-muted);
-}
-.text-primary {
-  color: var(--text-primary);
-}
-
-.section-title {
-  font-size: clamp(36px, 5vw, 56px);
-  margin-bottom: 3rem;
+.wall-text {
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  line-height: 1.35;
+  max-width: 34ch;
 }
 
-/* UI Elements */
-.divider {
-  height: 1px;
-  width: 100%;
-  background: linear-gradient(to right, transparent, var(--accent-green), transparent);
-  opacity: 0.3;
-  margin: 4rem 0;
+/* Wall panel: didactic text lettered straight onto the wall, no card */
+.panel h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 750;
+  font-stretch: 108%;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  padding-bottom: 14px;
+  border-bottom: var(--rail) solid var(--on-wall);
+  margin-bottom: 18px;
+}
+.panel h3 { font-size: 1.1rem; }
+.panel p, .panel li, .panel dd { max-width: 42ch; }
+.panel .meta { opacity: 0.85; font-variant-numeric: tabular-nums; }
+.panel > * + * { margin-top: 0.6em; }
+
+/* Tombstone label: the white card beside every work */
+.label {
+  background: var(--paper);
+  color: var(--ink);
+  padding: clamp(18px, 2vw, 26px);
+  box-shadow: 0 10px 18px -14px rgba(0, 0, 0, 0.35);
+}
+.label h2, .label h3 { font-size: 1.3rem; letter-spacing: -0.01em; }
+.label p, .label li { font-size: 0.97rem; max-width: 65ch; }
+.label .meta { color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.label > * + * { margin-top: 0.6em; }
+.label a, .footer a, .lobby-mail { overflow-wrap: anywhere; }
+
+/* Action links set like the label's "On view" line */
+.label-link {
+  display: inline-flex; align-items: center; gap: 0.35em;
+  font-weight: 700; text-decoration: underline;
 }
 
-/* Animations */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* The one authored motion: a work lands on its wire and settles */
+@keyframes hang {
+  0% { transform: translateY(-18px) rotate(-0.6deg); }
+  60% { transform: translateY(3px) rotate(0.15deg); }
+  100% { transform: none; }
 }
+.hung { animation: hang 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; transform-origin: 50% 0; }
 
-.animate-fade-up {
-  animation: fadeUp 0.4s ease-out forwards;
+@media (prefers-reduced-motion: reduce) {
+  html { transition: none; }
+  .hung { animation: none; }
 }

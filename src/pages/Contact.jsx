@@ -1,37 +1,32 @@
 import React from 'react';
-import Blobs from '../components/Blobs';
 import ContactForm from '../components/ContactForm';
-import { Mail, Phone } from 'lucide-react';
+import { LinkedinIcon, GithubIcon } from '../components/SocialIcons';
+import { EMAIL, LINKEDIN, GITHUB } from '../contact';
 import './Contact.css';
 
 const Contact = () => {
   return (
-    <main className="page-contact animate-fade-up">
-      <Blobs color="rgba(107, 76, 219, 0.15)" /> {/* Indigo blob */}
-      
-      <div className="container section">
-        <h1 className="section-title">
-          Contact <span className="text-accent">Me!</span>
-        </h1>
-        
-        <div className="contact-grid">
-          <div className="contact-info">
-            <p className="contact-intro">
-              Feel free to reach out if you're looking for a developer, have a question, or just want to connect.
-            </p>
-            
-            <div className="contact-methods">
-              <a href="mailto:{{EMAIL_ADDRESS}}" className="contact-link">
-                <Mail className="contact-icon" size={20} />
-                <span>"ravipatipujitha@gmail.com"</span>
-              </a>
-            </div>
-          </div>
-          
-          <div className="contact-form-wrapper">
-            <ContactForm />
-          </div>
-        </div>
+    <main className="page-contact container">
+      <header className="desk-head">
+        <h1 className="vinyl">Contact</h1>
+        <p className="wall-text">
+          Looking for a frontend developer, or have a question about my work? Write to me.
+        </p>
+      </header>
+
+      <div className="desk">
+        <section className="desk-direct" aria-label="Write to me directly">
+          <a className="desk-email" href={`mailto:${EMAIL}`}>{EMAIL}</a>
+          <ul className="desk-socials">
+            <li><a href={LINKEDIN} target="_blank" rel="noopener noreferrer"><LinkedinIcon size={22} />LinkedIn</a></li>
+            <li><a href={GITHUB} target="_blank" rel="noopener noreferrer"><GithubIcon size={22} />GitHub</a></li>
+          </ul>
+        </section>
+
+        <section className="label desk-form" aria-labelledby="c-form">
+          <h2 id="c-form">Or leave a message</h2>
+          <ContactForm />
+        </section>
       </div>
     </main>
   );

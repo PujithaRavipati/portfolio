@@ -1,22 +1,32 @@
 /* src/styles/variables.css */
 :root {
-  /* Colors */
-  --bg-base: #0A0E1A;
-  --bg-surface: #131A2B;
-  --text-primary: #F5F5F0;
-  --text-muted: #A9AFC0;
-  --accent-green: #9DC237;
+  /* Room walls. Each wall pairs with the text colour that passes contrast on it. */
+  --wall-lobby: #2747B8;   /* cobalt */
+  --wall-works: #1E6B52;   /* viridian */
+  --wall-archive: #E8A317; /* marigold */
+  --wall-desk: #B23A5F;    /* rose */
 
-  /* Borders */
-  --border-subtle: rgba(255, 255, 255, 0.06);
+  --paper: #FFFFFF;        /* label cards, frames */
+  --ink: #141414;          /* text on labels and on light walls */
+  --ink-soft: #4A4A4A;     /* secondary text on labels */
+
+  /* Current room, swapped by [data-room] on <html> */
+  --wall: var(--wall-lobby);
+  --on-wall: var(--paper);
 
   /* Typography */
-  --font-serif: 'Playfair Display', 'Lora', serif;
-  --font-sans: 'Inter', 'Work Sans', sans-serif;
+  --font-sans: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-code: ui-monospace, 'Cascadia Mono', Consolas, monospace;
 
   /* Layout */
-  --max-width: 1200px;
-  --pad-page-mobile: 24px;
-  --pad-page-desktop: 80px;
-  --gap-section: 120px;
+  --max-width: 1320px;
+  --gutter: clamp(16px, 5vw, 80px);
+  --rail: 2px;
+  --header-h: 88px;
+  --frame: clamp(8px, 1vw, 14px);
+  --hang: 0 28px 36px -22px rgba(0, 0, 0, 0.45);
 }
+
+:root[data-room="works"] { --wall: var(--wall-works); }
+:root[data-room="archive"] { --wall: var(--wall-archive); --on-wall: var(--ink); }
+:root[data-room="desk"] { --wall: var(--wall-desk); }

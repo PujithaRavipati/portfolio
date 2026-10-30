@@ -1,62 +1,47 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { rooms } from '../rooms';
 import './Navbar.css';
 
+const isTyping = (el) =>
+  el.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(el.tagName);
+
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
-
-  const links = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Contact', path: '/contact' }
-  ];
+  // Keys 1–4 walk between rooms
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.metaKey || e.ctrlKey || e.altKey || isTyping(e.target)) return;
+      const room = rooms.find(r => r.key === e.key);
+      if (room) navigate(room.path);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [navigate]);
 
   return (
-    <header className="navbar">
-      <div className="navbar-container container">
-        <NavLink to="/" className="brand" onClick={closeMenu}>
-          Portfolio
-        </NavLink>
-
-        {/* Desktop Nav */}
-        <nav className="desktop-nav">
-          {links.map(link => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-            >
-              {link.name}
-            </NavLink>
-          ))}
+    <header className="rail-header">
+      <div className="rail-inner container">
+        <NavLink to="/" className="rail-name">Ravipati Pujitha</NavLink>
+        <nav aria-label="Rooms">
+          <ul className="rail-links">
+            {rooms.map(room => (
+              <li key={room.id}>
+                <NavLink
+                  to={room.path}
+                  end
+                  className="rail-link"
+                  aria-keyshortcuts={room.key}
+                >
+                  <span className="rail-key" aria-hidden="true">0{room.key}</span>
+                  {room.name}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
         </nav>
-
-        {/* Mobile Menu Toggle */}
-        <button className="mobile-toggle" onClick={toggleMenu} aria-label="Toggle menu">
-          {isOpen ? <X size={24} color="var(--text-primary)" /> : <Menu size={24} color="var(--text-primary)" />}
-        </button>
       </div>
-
-      {/* Mobile Nav */}
-      {isOpen && (
-        <nav className="mobile-nav">
-          {links.map(link => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              onClick={closeMenu}
-              className={({ isActive }) => (isActive ? 'mobile-link active' : 'mobile-link')}
-            >
-              {link.name}
-            </NavLink>
-          ))}
-        </nav>
-      )}
     </header>
   );
 };

@@ -1,114 +1,81 @@
 import React from 'react';
-import Blobs from '../components/Blobs';
-import Timeline from '../components/Timeline';
-import TagList from '../components/TagList';
-import SkillCard from '../components/SkillCard';
-import { Globe, Paintbrush, Brain } from 'lucide-react';
 import './About.css';
 
+const education = [
+  { title: 'B.Tech in Computer Science & Engineering', place: 'VIT-AP University', date: '2021 – 2025', text: 'Four-year undergraduate program focused on core CS fundamentals, software development, and emerging technologies.' },
+  { title: 'Intermediate (MPC)', place: 'SR Junior College', date: '2019 – 2021', text: 'Higher secondary education with a focus on Mathematics, Physics, and Chemistry.' }
+];
+
+const skills = [
+  { title: 'Web development', text: 'React and JavaScript. Both apps in Works are React.' },
+  { title: 'UI/UX design', text: 'I design my own interfaces, including this site.' },
+  { title: 'AI & machine learning', text: 'Learning ML concepts.' }
+];
+
+const achievements = [
+  'Built and deployed multiple full-stack web applications as academic and personal projects',
+  'Self-taught in UI/UX design and modern front-end frameworks'
+];
+
+const passions = ['Traveling', 'Watching TV', 'Drawing', 'Exercise'];
+const obsessions = ['Skating', 'Skill development', 'Family time'];
+
 const About = () => {
-  const academicItems = [
-    {
-      title: 'B.Tech in Computer Science & Engineering',
-      subtitle: 'VIT-AP University',
-      date: '2021 – 2025',
-      description: 'Four-year undergraduate program focused on core CS fundamentals, software development, and emerging technologies.',
-    },
-    {
-      title: 'Intermediate (MPC)',
-      subtitle: 'SR Junior College',
-      date: '2019 – 2021',
-      description: 'Completed higher secondary education with a focus on Mathematics, Physics, and Chemistry.',
-    }
-  ];
-
-  const experienceItems = [
-    {
-      title: 'Fresher — Open to Opportunities',
-      subtitle: 'Actively seeking full-time & freelance roles',
-      date: '2025 – Present',
-      description: 'Building real-world projects and expanding my skill set while looking for the right opportunity to start my professional journey.',
-    }
-  ];
-
-  const passions = ['Traveling', 'Watching TV', 'Drawing', 'Exercise'];
-  const obsessions = ['Skating', 'Skill Development', 'Family Time'];
-
   return (
-    <main className="page-about animate-fade-up">
-      <Blobs color="rgba(219, 107, 76, 0.15)" /> {/* Warm amber/coral blob */}
-      
-      <div className="container">
-        <section className="section">
-          <h1 className="section-title">
-            About <span className="text-accent">Me</span>
-          </h1>
+    <main className="page-about container">
+      <header className="about-head">
+        <h1 className="vinyl">About me</h1>
+        <p className="wall-text">
+          Hi, I'm Pujitha. I finished my B.Tech in Computer Science at VIT-AP in 2025, and I build React apps.
+        </p>
+        <p className="about-open">Currently open to full-time opportunities and freelance work. Let's talk.</p>
+      </header>
 
-          <div className="about-content">
-            <p className="about-paragraph">
-              Hi, I'm Pujitha — a Computer Science graduate passionate about building thoughtful, user-focused digital experiences.
-            </p>
-            
-            <div className="availability-tag">
-              Currently open to full-time opportunities and freelance work — let's talk.
-            </div>
-
-            <div className="about-grid">
-              <div className="about-column">
-                <h2 className="subsection-title">Academic Background</h2>
-                <Timeline items={academicItems} />
-                
-                <div className="margin-top-large">
-                  <h2 className="subsection-title">What I Love</h2>
-                  <TagList tags={passions} />
-                </div>
+      <div className="archive">
+        <section className="panel archive-skills" aria-labelledby="a-skills">
+          <h2 id="a-skills">Skills</h2>
+          <dl>
+            {skills.map(s => (
+              <div key={s.title}>
+                <dt>{s.title}</dt>
+                <dd>{s.text}</dd>
               </div>
-
-              <div className="about-column">
-                <h2 className="subsection-title">Experience</h2>
-                <Timeline items={experienceItems} />
-                
-                <div className="margin-top-large">
-                  <h2 className="subsection-title">Achievements</h2>
-                  <ul className="achievement-list">
-                    <li>Built and deployed multiple full-stack web applications as academic and personal projects</li>
-                    <li>Consistently maintained strong academic performance throughout B.Tech</li>
-                    <li>Self-taught in UI/UX design and modern front-end frameworks</li>
-                  </ul>
-                </div>
-
-                <div className="margin-top-large">
-                  <h2 className="subsection-title text-muted">Currently obsessed with:</h2>
-                  <TagList tags={obsessions} />
-                </div>
-              </div>
-            </div>
-          </div>
+            ))}
+          </dl>
         </section>
 
-        <div className="divider"></div>
+        <section className="panel archive-edu" aria-labelledby="a-edu">
+          <h2 id="a-edu">Education</h2>
+          <ol>
+            {education.map(e => (
+              <li key={e.title}>
+                <h3>{e.title}</h3>
+                <p className="meta">{e.place} · {e.date}</p>
+                <p>{e.text}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
 
-        <section className="section">
-          <h1 className="section-title">
-            My <span className="text-accent">Skills</span>
-          </h1>
-          <div className="skills-grid">
-            <SkillCard 
-              icon={Globe}
-              title="Web Development"
-              description="Experienced in building responsive, modern web applications using React and other JavaScript frameworks."
-            />
-            <SkillCard 
-              icon={Paintbrush}
-              title="UI/UX Design"
-              description="Passionate about crafting clean, intuitive interfaces that balance aesthetics with usability."
-            />
-            <SkillCard 
-              icon={Brain}
-              title="AI & Machine Learning"
-              description="Exploring machine learning concepts and applying them to real-world problem solving."
-            />
-          </div>
+        <section className="panel archive-exp" aria-labelledby="a-exp">
+          <h2 id="a-exp">Experience</h2>
+          <h3>Fresher, open to opportunities</h3>
+          <p className="meta">2025 – present</p>
+          <p>Building real-world projects and expanding my skill set while looking for the right place to start my professional journey.</p>
+        </section>
+
+        <section className="panel archive-ach" aria-labelledby="a-ach">
+          <h2 id="a-ach">Achievements</h2>
+          <ul>
+            {achievements.map(a => <li key={a}>{a}</li>)}
+          </ul>
+        </section>
+
+        <section className="panel archive-love" aria-labelledby="a-love">
+          <h2 id="a-love">What I love</h2>
+          <p>{passions.join(' · ')}</p>
+          <p className="meta">Currently obsessed with</p>
+          <p>{obsessions.join(' · ')}</p>
         </section>
       </div>
     </main>

@@ -1,0 +1,28 @@
+.work { display: grid; gap: 20px; align-content: start; }
+
+.work-hang { position: relative; padding-top: 40px; }
+
+/* Two wires from the frame's corners up to one hook */
+.work-wire {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 50%;
+  height: 40px;
+  overflow: visible;
+}
+.work-wire polyline {
+  fill: none;
+  stroke: var(--on-wall);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.frame {
+  background: var(--paper);
+  padding: var(--frame);
+  box-shadow: var(--hang);
+}
+.frame img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+
+.work-label { max-width: 380px; }

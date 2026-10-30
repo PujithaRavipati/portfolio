@@ -1,48 +1,32 @@
-.page-contact {
-  min-height: calc(100vh - 80px);
-}
+.page-contact { padding-bottom: clamp(64px, 10vw, 128px); }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4rem;
-}
+.desk-head { padding: clamp(48px, 8vh, 96px) 0 clamp(32px, 5vh, 56px); }
+.desk-head .wall-text { margin-top: 24px; }
 
-@media (min-width: 768px) {
-  .contact-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-  }
+/* The email is lettered on the wall at room scale */
+.desk-direct {
+  border-top: var(--rail) solid var(--on-wall);
+  padding-top: 20px;
+  margin-bottom: clamp(48px, 7vw, 88px);
 }
+.desk-email {
+  display: inline-block;
+  font-size: clamp(1.6rem, 5vw, 4.5rem);
+  font-weight: 750;
+  font-stretch: 104%;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.14em;
+  overflow-wrap: anywhere;
+}
+.desk-email:hover { text-decoration-thickness: 4px; }
 
-.contact-intro {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 3rem;
-  max-width: 400px;
+.desk-socials { display: flex; flex-wrap: wrap; gap: 12px 32px; margin-top: 24px; }
+.desk-socials a {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 1.15rem; font-weight: 600; text-decoration: none;
 }
+.desk-socials a:hover { text-decoration: underline; }
 
-.contact-methods {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.contact-link {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-family: var(--font-sans);
-  font-size: 1.1rem;
-  color: var(--text-primary);
-  transition: color 0.2s ease;
-}
-
-.contact-link:hover {
-  color: var(--accent-green);
-}
-
-.contact-icon {
-  color: var(--accent-green);
-}
+.desk-form { max-width: 760px; margin-left: auto; }

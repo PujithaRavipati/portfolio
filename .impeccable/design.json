@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-30T08:00:48.489Z",
+  "title": "Design System: Ravipati Pujitha, Frontend Developer",
+  "extensions": {
+    "colorMeta": {
+      "wall-lobby": {
+        "role": "primary",
+        "displayName": "Cobalt Lobby",
+        "canonical": "#2747B8",
+        "tonalRamp": [
+          "#0c1537",
+          "#14245c",
+          "#1b3281",
+          "#223ea2",
+          "#2747b8",
+          "#687ecd",
+          "#a9b5e3",
+          "#e5e9f6"
+        ]
+      },
+      "wall-works": {
+        "role": "primary",
+        "displayName": "Viridian Works",
+        "canonical": "#1E6B52",
+        "tonalRamp": [
+          "#092019",
+          "#0f3629",
+          "#154b39",
+          "#1a5e48",
+          "#1e6b52",
+          "#629786",
+          "#a5c4ba",
+          "#e4edea"
+        ]
+      },
+      "wall-archive": {
+        "role": "primary",
+        "displayName": "Marigold Archive",
+        "canonical": "#E8A317",
+        "tonalRamp": [
+          "#463107",
+          "#74520c",
+          "#a27210",
+          "#cc8f14",
+          "#e8a317",
+          "#efbf5d",
+          "#f6daa2",
+          "#fcf4e3"
+        ]
+      },
+      "wall-desk": {
+        "role": "primary",
+        "displayName": "Rose Desk",
+        "canonical": "#B23A5F",
+        "tonalRamp": [
+          "#35111d",
+          "#591d30",
+          "#7d2943",
+          "#9d3354",
+          "#b23a5f",
+          "#c9758f",
+          "#e0b0bf",
+          "#f6e7ec"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Gallery Paper",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "#4d4d4d",
+          "#808080",
+          "#b3b3b3",
+          "#e0e0e0",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Label Ink",
+        "canonical": "#141414",
+        "tonalRamp": [
+          "#060606",
+          "#0a0a0a",
+          "#0e0e0e",
+          "#121212",
+          "#141414",
+          "#5b5b5b",
+          "#a1a1a1",
+          "#e3e3e3"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#4A4A4A",
+        "tonalRamp": [
+          "#161616",
+          "#252525",
+          "#343434",
+          "#414141",
+          "#4a4a4a",
+          "#808080",
+          "#b7b7b7",
+          "#e9e9e9"
+        ]
+      },
+      "label-hairline": {
+        "role": "neutral",
+        "displayName": "Label Hairline",
+        "canonical": "#E2E2E2",
+        "tonalRamp": [
+          "#444444",
+          "#717171",
+          "#9e9e9e",
+          "#c7c7c7",
+          "#e2e2e2",
+          "#ebebeb",
+          "#f3f3f3",
+          "#fcfcfc"
+        ]
+      },
+      "error": {
+        "role": "neutral",
+        "displayName": "Deep Rose Error",
+        "canonical": "#9E1F3F",
+        "tonalRamp": [
+          "#2f0913",
+          "#4f1020",
+          "#6f162c",
+          "#8b1b37",
+          "#9e1f3f",
+          "#bb6279",
+          "#d8a5b2",
+          "#f3e4e8"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Lobby Vinyl",
+        "purpose": "The name on the Lobby wall only."
+      },
+      "headline": {
+        "displayName": "Room Vinyl",
+        "purpose": "Room name at the top of each room; scaled variants for directory, footer line, Desk email."
+      },
+      "title": {
+        "displayName": "Panel Title",
+        "purpose": "Wall panel headings, sitting on a 2px rule."
+      },
+      "wall-text": {
+        "displayName": "Wall Text",
+        "purpose": "One-sentence room introduction, max 34ch."
+      },
+      "label-title": {
+        "displayName": "Label Title",
+        "purpose": "Work name on a tombstone label."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Label and panel copy."
+      },
+      "label": {
+        "displayName": "Field Label",
+        "purpose": "Form field labels."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Code inside a study only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "hang",
+        "value": "0 28px 36px -22px rgba(0,0,0,0.45)",
+        "purpose": "Picture frames hung on the wall."
+      },
+      {
+        "name": "label",
+        "value": "0 10px 18px -14px rgba(0,0,0,0.35)",
+        "purpose": "Tombstone label cards; paper button at 0.4 alpha."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-settle",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All authored motion: wall fade, hang settle, rail hook, button lift."
+      },
+      {
+        "name": "wall-fade",
+        "value": "background-color 0.5s",
+        "purpose": "Wall colour change between rooms."
+      },
+      {
+        "name": "hang",
+        "value": "0.9s: translateY(-18px) rotate(-0.6deg) -> translateY(3px) rotate(0.15deg) -> none",
+        "purpose": "A work lands on its wire and settles. Off under reduced motion."
+      },
+      {
+        "name": "rail-hook",
+        "value": "height 0.35s",
+        "purpose": "Hook drops from the rail: 4px hover, 10px active."
+      },
+      {
+        "name": "lift",
+        "value": "transform 0.25s, translateY(-2px)",
+        "purpose": "Button hover."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "form-stack",
+        "value": "560px"
+      },
+      {
+        "name": "nav-compact",
+        "value": "640px"
+      },
+      {
+        "name": "footer-stack",
+        "value": "720px"
+      },
+      {
+        "name": "single-column",
+        "value": "900px"
+      },
+      {
+        "name": "works-stack",
+        "value": "960px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Paper Button",
+      "kind": "button",
+      "refersTo": "button-paper",
+      "description": "Primary action on a wall.",
+      "html": "<div class=\"ds-room\"><a class=\"ds-btn-paper\" href=\"#\">See the works <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></div>",
+      "css": ".ds-room{background:#2747B8;color:#fff;padding:24px;font-family:Archivo,\"Helvetica Neue\",Arial,sans-serif;}.ds-btn-paper{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#141414;padding:14px 22px;font-weight:700;text-decoration:none;box-shadow:0 10px 18px -14px rgba(0,0,0,.4);transition:transform .25s cubic-bezier(.16,1,.3,1)}.ds-btn-paper:hover{transform:translateY(-2px)}.ds-btn-paper:focus-visible{outline:2px solid #fff;outline-offset:3px}"
+    },
+    {
+      "name": "Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Submit action on paper.",
+      "html": "<button class=\"ds-btn-ink\">Send message</button>",
+      "css": ".ds-btn-ink{background:#141414;color:#fff;border:0;padding:14px 26px;font-weight:700;font-size:1rem;font-family:Archivo,\"Helvetica Neue\",Arial,sans-serif;cursor:pointer;transition:transform .25s cubic-bezier(.16,1,.3,1),opacity .2s}.ds-btn-ink:hover{transform:translateY(-2px)}.ds-btn-ink:focus-visible{outline:2px solid #141414;outline-offset:3px}.ds-btn-ink:disabled{opacity:.6}"
+    },
+    {
+      "name": "Input Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Underlined paper field; rose focus on the Desk.",
+      "html": "<label class=\"ds-field\"><span>Email</span><input class=\"ds-input\" type=\"email\" placeholder=\"you@company.com\"></label>",
+      "css": ".ds-field{display:grid;gap:6px;font-family:Archivo,\"Helvetica Neue\",Arial,sans-serif;color:#141414;background:#fff;padding:16px}.ds-field span{font-size:.875rem;font-weight:700}.ds-input{font:inherit;color:#141414;background:#fff;border:0;border-bottom:2px solid #141414;border-radius:0;padding:10px 2px;caret-color:#B23A5F;transition:background-color .2s}.ds-input:hover{background:#F6F6F6}.ds-input:focus-visible{outline:2px solid #B23A5F;outline-offset:2px}"
+    },
+    {
+      "name": "Rail Navigation",
+      "kind": "nav",
+      "refersTo": "rail-link",
+      "description": "Room links on the picture rail; state is the hook, never colour.",
+      "html": "<nav class=\"ds-rail\"><a href=\"#\" class=\"ds-rail-link ds-active\"><span class=\"ds-key\">01</span>Lobby</a><a href=\"#\" class=\"ds-rail-link\"><span class=\"ds-key\">02</span>Works</a><a href=\"#\" class=\"ds-rail-link\"><span class=\"ds-key\">03</span>Archive</a><a href=\"#\" class=\"ds-rail-link\"><span class=\"ds-key\">04</span>Desk</a></nav>",
+      "css": ".ds-rail{display:flex;gap:40px;justify-content:flex-end;align-items:flex-end;height:88px;padding:0 24px;background:#2747B8;color:#fff;border-bottom:2px solid #fff;font-family:Archivo,\"Helvetica Neue\",Arial,sans-serif;}.ds-rail-link{position:relative;padding:14px 0;font-size:.97rem;font-weight:500;color:inherit;text-decoration:none}.ds-key{font-variant-numeric:tabular-nums;margin-right:.5em;opacity:.75}.ds-rail-link::after{content:\"\";position:absolute;left:0;right:0;top:100%;height:0;background:#fff;transition:height .35s cubic-bezier(.16,1,.3,1)}.ds-rail-link:hover::after{height:4px}.ds-rail-link.ds-active{font-weight:700}.ds-rail-link.ds-active::after{height:10px}.ds-rail-link:focus-visible{outline:2px solid #fff;outline-offset:3px}"
+    },
+    {
+      "name": "Tombstone Label",
+      "kind": "card",
+      "refersTo": "label-card",
+      "description": "White label beside every work.",
+      "html": "<div class=\"ds-room\"><div class=\"ds-label\"><h3>VerifyOnChain</h3><p class=\"ds-meta\">2026<br>React, Node/Express, Solidity</p><p>A certificate registry on Ethereum.</p><p><span class=\"ds-meta\">On view: </span><a href=\"#\">verifyonchain-frontend.vercel.app</a></p></div></div>",
+      "css": ".ds-room{background:#2747B8;color:#fff;padding:24px;font-family:Archivo,\"Helvetica Neue\",Arial,sans-serif;}.ds-label{background:#fff;color:#141414;padding:clamp(18px,2vw,26px);max-width:380px;box-shadow:0 10px 18px -14px rgba(0,0,0,.35)}.ds-label>*+*{margin-top:.6em}.ds-label h3{margin:0;font-size:1.3rem;font-weight:700;letter-spacing:-.01em;line-height:1.1}.ds-label p{margin:0;font-size:.97rem;line-height:1.55}.ds-meta{color:#4A4A4A;font-variant-numeric:tabular-nums}.ds-label a{color:inherit;font-weight:700;text-underline-offset:.2em;text-decoration-thickness:1px}.ds-label a:hover{text-decoration-thickness:2px}"
+    },
+    {
+      "name": "Hung Work",
+      "kind": "custom",
+      "refersTo": "frame",
+      "description": "Framed piece on two wires from one hook, with the settle animation.",
+      "html": "<div class=\"ds-room\"><div class=\"ds-hang\"><svg class=\"ds-wire\" viewBox=\"0 0 100 40\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><polyline points=\"0,40 50,1 100,40\"/></svg><div class=\"ds-frame\"><div class=\"ds-shot\"></div></div></div></div>",
+      "css": ".ds-room{background:#2747B8;color:#fff;padding:24px;font-family:Archivo,\"Helvetica Neue\",Arial,sans-serif;}.ds-hang{position:relative;padding-top:40px;max-width:420px;animation:ds-hang .9s cubic-bezier(.16,1,.3,1) both;transform-origin:50% 0}.ds-wire{position:absolute;top:0;left:25%;width:50%;height:40px;overflow:visible}.ds-wire polyline{fill:none;stroke:#fff;stroke-width:1.5;vector-effect:non-scaling-stroke}.ds-frame{background:#fff;padding:clamp(8px,1vw,14px);box-shadow:0 28px 36px -22px rgba(0,0,0,.45)}.ds-shot{aspect-ratio:16/10;background:#141414}@keyframes ds-hang{0%{transform:translateY(-18px) rotate(-.6deg)}60%{transform:translateY(3px) rotate(.15deg)}100%{transform:none}}@media (prefers-reduced-motion:reduce){.ds-hang{animation:none}}"
+    },
+    {
+      "name": "Wall Panel",
+      "kind": "custom",
+      "refersTo": "title",
+      "description": "Didactic text lettered straight onto the wall under a 2px rule; no card.",
+      "html": "<div class=\"ds-archive\"><section class=\"ds-panel\"><h2>Skills</h2><div class=\"ds-row\"><b>Web development</b><p>React and JavaScript.</p></div><div class=\"ds-row\"><b>UI/UX design</b><p>I design my own interfaces.</p></div></section></div>",
+      "css": ".ds-archive{background:#E8A317;color:#141414;padding:24px;font-family:Archivo,\"Helvetica Neue\",Arial,sans-serif;}.ds-panel{max-width:420px}.ds-panel h2{margin:0 0 18px;font-size:clamp(1.75rem,3vw,2.5rem);font-weight:750;font-stretch:108%;letter-spacing:-.025em;line-height:1;padding-bottom:14px;border-bottom:2px solid #141414}.ds-row{padding:14px 0;border-top:1px solid color-mix(in srgb,#141414 25%,transparent)}.ds-row:first-of-type{border-top:0;padding-top:4px}.ds-row p{margin:4px 0 0}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Exhibition",
+    "overview": "The site is a small gallery. Each route is a room with its own flat, full-strength painted wall: a cobalt Lobby, a viridian Works room, a marigold Archive, a rose Desk. A 2px picture rail runs across the top of every room. The navigation sits on that rail. Shipped apps hang from it on thin wires as framed works, each with a white tombstone label beside it. Room-scale headings are lettered straight onto the wall in wide, heavy Archivo, like wall vinyl. Everything that is not a work or a label stays on the wall as text, with no card behind it.\n\nDensity is calm and uneven on purpose. Each room has one dominant work, and labels hang at different heights and widths instead of sitting in an equal grid. Depth comes only from objects hanging off the wall (frames, labels, the paper button), and each casts a soft drop shadow below it. Motion is limited to one authored moment: a work lands on its wire and settles, and the wall colour fades when you change rooms.",
+    "keyCharacteristics": [
+      "One flat painted wall per room, swapped by `data-room` on `<html>`; there are no gradients and no texture.",
+      "A 2px rail at the top and a second rail (the skirting) above the footer close every room.",
+      "White paper objects (frame, label, button) are the only surfaces. Everything else is lettered on the wall.",
+      "One grotesk family (Archivo, variable width and weight) handles every role, from 9rem vinyl to 0.875rem labels.",
+      "Square corners everywhere."
+    ],
+    "rules": [
+      {
+        "name": "The One Wall Rule",
+        "body": "Each room is painted in exactly one wall colour, edge to edge. Never place two wall colours on the same screen, and never use a wall colour as an accent chip, button or border.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink-Never-Wall Rule",
+        "body": "Text never takes a wall colour. Text on a wall uses `--on-wall`: paper on cobalt, viridian and rose, ink on marigold. Text on paper uses ink. A new room must pair its wall with whichever of those two passes contrast.",
+        "section": "colors"
+      },
+      {
+        "name": "The Vinyl Rule",
+        "body": "Anything lettered onto the wall at room scale is Archivo 750, widened (104–118%), with negative tracking (-0.025 to -0.035em) and line-height at or below 1. Type inside a label card is never widened.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hung Object Rule",
+        "body": "Only paper objects hanging on the wall (frame, label, paper button) cast shadows. Wall panels, rails and lettering stay flat.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** give every new room one full-strength flat wall and set `--on-wall` to whichever of paper or ink passes contrast on it.",
+      "**Do** hang shipped work as a frame on a wire with a white tombstone label (title, year and medium, description, \"On view:\" link).",
+      "**Do** letter room-scale headings in Archivo 750, widened 104–118%, with tracking from -0.025 to -0.035em.",
+      "**Do** show active and hover states with the rail line (a hook dropping 4px on hover, 10px when active) or underline thickness, never with a colour change.",
+      "**Do** keep corners square and structural lines at 2px (rail) or 1px (row divider).",
+      "**Do** keep motion to the hang settle and the 0.5s wall fade, and switch both off under `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "**Don't** set text in a wall colour, and don't use wall colours as accents on another room's wall.",
+      "**Don't** lay works out as a row of equal cards. Each wall has one dominant work and staggered companions.",
+      "**Don't** put wall text in cards. Panels are lettered straight onto the wall.",
+      "**Don't** add shadows to anything that isn't a hung paper object, and don't use hard offset shadows.",
+      "**Don't** round corners or add gradients or textures to walls."
+    ]
+  }
+}
